@@ -4,6 +4,11 @@
     white-space: nowrap;
 }
 
+.product-name {
+    line-height: 50px;
+    min-width: 300px;
+}
+
 .my-spinner {
     /* background-color: transparent; */
 }

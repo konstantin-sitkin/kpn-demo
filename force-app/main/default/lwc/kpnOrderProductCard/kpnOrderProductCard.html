@@ -3,21 +3,19 @@
         <template if:true={showSpinner}>
             <lightning-spinner alternative-text="Loading" size="small" class="my-spinner"></lightning-spinner>
         </template>
-        <lightning-card title={availableProduct.name} icon-name="standard:product">
-            <div class="slds-p-horizontal_small">
-                <div class="slds-grid slds-grid_vertical-stretch slds-wrap">
-                    <div class="slds-col slds-col_bump-right">
-                    </div>
-                    <div class="slds-col slds-grow-none">
-                        <lightning-input type="number" name="listPrice" label={labels.fieldListPrice} value={availableProduct.listPrice} formatter="currency" read-only>
-                        </lightning-input>
-                    </div>
-                    <div class="slds-col slds-grow-none">
-                        <lightning-button label={labels.buttonAdd} onclick={handleButtonAddClick}></lightning-button>
-                    </div>
+        <div class="slds-var-p-horizontal_small slds-border_bottom">
+            <div class="slds-grid slds-grid_vertical-stretch slds-wrap">
+                <div class="slds-col product-name">
+                    {availableProduct.name}
+                </div>
+                <div class="slds-col slds-grow-none">
+                    <lightning-input type="number" name="listPrice" label={labels.fieldListPrice} value={availableProduct.listPrice} formatter="currency" read-only>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-grow-none slds-var-p-top_small">
+                    <lightning-button label={labels.buttonAdd} class="slds-var-m-top_small" onclick={handleButtonAddClick}></lightning-button>
                 </div>
             </div>
-            <p slot="footer"></p>
-        </lightning-card>
+        </div>
     </div>
 </template>

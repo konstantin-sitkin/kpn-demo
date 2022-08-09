@@ -6,7 +6,7 @@ import CHANNEL_ORDER_ITEM_CHANGE from "@salesforce/messageChannel/OrderItemChang
 
 import apexGetOrderItems from "@salesforce/apex/KPN_OrderViewOrderItemsCtrl.getOrderItems";
 const columns = [
-    { label: "Name", fieldName: "name", iconName: "standard:order_item", initialWidth: 240 },
+    { label: "Name", fieldName: "name", iconName: "standard:order_item"},
     { label: "Unit Price", fieldName: "unitPrice", type: "currency", iconName: "utility:currency" },
     { label: "Quantity", fieldName: "quantity", type: "number" },
     { label: "Total Price", fieldName: "totalPrice", type: "currency", iconName: "utility:currency" },

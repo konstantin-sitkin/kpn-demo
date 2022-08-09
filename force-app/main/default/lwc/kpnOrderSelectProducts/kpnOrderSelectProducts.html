@@ -1,10 +1,12 @@
 <template>
     <template if:true={availableProducts.length}>
+        <div class="slds-size_1-of-1">
         <template for:each={availableProducts} for:item="availableProduct" for:index="availableProductIndex">
             <div key={availableProduct.pbeId}>
                 <c-kpn-order-product-card order-id={recordId} available-product={availableProduct}></c-kpn-order-product-card>
             </div>
         </template>
+        </div>
         <!--Pagination -->
         <div class="slds-grid slds-gutters slds-grid_align-center slds-p-top_small">
             <div class="slds-col">
