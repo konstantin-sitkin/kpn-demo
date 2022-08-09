@@ -5,12 +5,14 @@ import apexGetOrderableProducts from "@salesforce/apex/KPN_OrderSelectProductsCt
 import apexGetOrderableProductsCount from "@salesforce/apex/KPN_OrderSelectProductsCtrl.getOrderableProductsCount";
 
 export default class OrderSelectProducts extends LightningElement {
+    // dynamic
+    currentOffset; // products page offset
+    pageSize; // products page size
+    availableProducts = []; // wrapper of price book entries
+    productsTotal; // total records validator for pagination
+    // api
     @api
-    recordId;
-    currentOffset;
-    pageSize;
-    availableProducts = [];
-    productsTotal;
+    recordId; // param from record page
 
     @api
     get previousDisabled() {
@@ -66,7 +68,9 @@ export default class OrderSelectProducts extends LightningElement {
     }
 
     handleButtonPreviousClick(event) {
+        // get previous offset
         let offsetCalculated = this.currentOffset - this.pageSize;
+        // normalize offset if it's the last page
         if (offsetCalculated < 0) {
             offsetCalculated = 0;
         }
@@ -75,7 +79,9 @@ export default class OrderSelectProducts extends LightningElement {
     }
 
     handleButtonNextClick(event) {
+        // get next offset
         let offsetCalculated = this.currentOffset + this.pageSize;
+        // normalize offset if it's the last page
         if (offsetCalculated >= this.productsTotal) {
             offsetCalculated = this.productsTotal - this.pageSize;
         }

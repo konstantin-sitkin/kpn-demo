@@ -63,6 +63,7 @@ export default class OrderProductCard extends LightningElement {
         console.log("upserted OrderItem", response);
 
         const payload = { data: response };
+        // LMS should be enough for components on a single page
         publish(this.messageContext, CHANNEL_ORDER_ITEM_CHANGE, payload);
     }
 }

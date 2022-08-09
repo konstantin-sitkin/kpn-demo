@@ -11,39 +11,44 @@ const columns = [
     { label: "Quantity", fieldName: "quantity", type: "number" },
     { label: "Total Price", fieldName: "totalPrice", type: "currency", iconName: "utility:currency" },
 ];
-
+// just one background class to highlight updated row with green color
 const CELL_COLOR_CLASS = {
     success: "slds-icon-custom-custom74",
 };
 const RESET_STYLING_INTERVAL = 2000;
 export default class OrderViewOrderItems extends LightningElement {
-    tableItems = [];
-    tableColumns = columns;
-
+    // api
     @api
     recordId;
-
+    // wire
     @wire(MessageContext)
     messageContext;
-
+    // dynamic
+    tableItems = [];
+    tableColumns = columns;
+    orderItemChangeSubscription;
     recordsReceived = [];
 
     connectedCallback() {
         this.subscribeToMessageChannels();
+        // set common attributes for all columns
         this.processTableColumns();
+        // single call to populate table with existing order items
         this.getOrderItemsSafe();
     }
 
     subscribeToMessageChannels() {
-        this.filterSubscription = subscribe(this.messageContext, CHANNEL_ORDER_ITEM_CHANGE, (message) => this.handleOrderItemChangeMessage(message));
+        this.orderItemChangeSubscription = subscribe(this.messageContext, CHANNEL_ORDER_ITEM_CHANGE, (message) => this.handleOrderItemChangeMessage(message));
     }
 
     async handleOrderItemChangeMessage(message) {
         console.log("LMS Order", message);
+        // save received record for future use / delayed processing
         this.recordsReceived.push({
             ...message.data,
             receivedDate: Date.now,
         });
+        // channel has a single attribute "data"
         this.syncReceivedRecord(message.data);
     }
 
@@ -65,22 +70,30 @@ export default class OrderViewOrderItems extends LightningElement {
 
     processTableColumns() {
         this.tableColumns.forEach((tableColumn) => {
+            // hid column wrap/clip actions
             tableColumn.hideDefaultActions = true;
+            // assigned fieldName containing class to highlight row
             tableColumn.cellAttributes = { class: { fieldName: "cellUpdatedClass" } };
         });
     }
 
     async syncReceivedRecord(orderItemRecord) {
+        // allow recently updated rows to have highlight class at least 2sec
         clearInterval(this.stylingTimeout);
         let tableItemReceived = this.buildTableItem(orderItemRecord);
+        // highlight row as new
         tableItemReceived.cellUpdatedClass = CELL_COLOR_CLASS.success;
+        // find existing row
         let tableItemExisting = this.tableItems.find((tableItem) => {
             return tableItem.itemId === tableItemReceived.itemId;
         });
         if (!tableItemExisting) {
+            // add row as first if not found in table
             this.tableItems = [tableItemReceived, ...this.tableItems];
         } else {
+            // assign object attributes if row exists
             Object.assign(tableItemExisting, tableItemReceived);
+            // spread array to create new reference and rerender table
             this.tableItems = [...this.tableItems];
         }
 
@@ -88,9 +101,11 @@ export default class OrderViewOrderItems extends LightningElement {
     }
 
     resetStyling() {
+        // reset highlight class for all rows
         this.tableItems.forEach((tableItem) => {
             tableItem.cellUpdatedClass = "";
         });
+        // spread array to create new reference and rerender table
         this.tableItems = [...this.tableItems];
     }
 
@@ -100,10 +115,12 @@ export default class OrderViewOrderItems extends LightningElement {
             let tableItem = this.buildTableItem(orderItemRecord);
             tableItems.push(tableItem);
         });
+        // reassigns variable reference to rerender table
         this.tableItems = tableItems;
     }
 
     buildTableItem(orderItemRecord) {
+        // OrderItem to table row converter, loosely coupled wrapper
         let tableItem = {
             itemId: orderItemRecord.Id,
             name: orderItemRecord.Product2.Name,
@@ -114,6 +131,7 @@ export default class OrderViewOrderItems extends LightningElement {
         return tableItem;
     }
 
+    // async function to enable component interactivity
     delay(ms, func) {
         return new Promise((resolve) => {
             // eslint-disable-next-line @lwc/lwc/no-async-operation
