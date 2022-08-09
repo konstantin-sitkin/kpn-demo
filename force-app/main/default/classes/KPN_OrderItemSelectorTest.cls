@@ -14,12 +14,15 @@ private class KPN_OrderItemSelectorTest {
     static void testGetByIdNull() {
         Id orderItemId = null;
         Boolean exceptionThrown = false;
+
+        Test.startTest();
         try {
             KPN_OrderItemSelector.getById(orderItemId);
         } catch (KPN_OrderItemSelector.OrderItemSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }
+        Test.stopTest();
 
         System.assert(exceptionThrown, 'an exception should be thrown on null id');
     } 
@@ -29,12 +32,15 @@ private class KPN_OrderItemSelectorTest {
         Id orderItemId = [SELECT Id FROM OrderItem LIMIT 1].Id;
         OrderItem actualOrderItem;
         Boolean exceptionThrown = false;
+
+        Test.startTest();
         try {
             actualOrderItem = KPN_OrderItemSelector.getById(orderItemId);
         } catch (KPN_OrderItemSelector.OrderItemSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }
+        Test.stopTest();
 
         System.assert(!exceptionThrown, 'no exception should be thrown on valid id');
         System.assertNotEquals(null, actualOrderItem, 'an order item should be returned');
@@ -46,12 +52,15 @@ private class KPN_OrderItemSelectorTest {
         Id orderId = [SELECT Id FROM Order LIMIT 1].Id;
         List<OrderItem> orderItems;
         Boolean exceptionThrown = false;
+
+        Test.startTest();
         try {
             orderItems = KPN_OrderItemSelector.getByOrderId(orderId);
         } catch (KPN_OrderItemSelector.OrderItemSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }
+        Test.stopTest();
 
         System.assert(!exceptionThrown, 'no exception should be thrown on valid id');
         System.assertNotEquals(null, orderItems, 'an order item should be returned');
