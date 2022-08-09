@@ -24,6 +24,11 @@ export default class OrderSelectProducts extends LightningElement {
         return this.currentOffset + this.pageSize >= this.productsTotal;
     }
 
+    @api
+    get paginationEnabled() {
+        return this.productsTotal > this.pageSize;
+    }
+
     connectedCallback() {
         this.currentOffset = 0;
         this.productsTotal = 0;
