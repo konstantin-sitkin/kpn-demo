@@ -1,6 +1,6 @@
 public with sharing class OrderSelector {
     public static Order getById(String orderId) {
-        Order record = [
+        List<Order> records = [
             SELECT Id,
             PriceBook2Id
             FROM Order
@@ -8,6 +8,13 @@ public with sharing class OrderSelector {
             WITH SECURITY_ENFORCED
             LIMIT 1
         ];
-        return record;
+        if (records.isEmpty()) {
+            throw new OrderSelectorException('No records found for id: ' + orderId);
+        }
+        return records.get(0);
+    }
+
+    public class OrderSelectorException extends Exception {
+        
     }
 }

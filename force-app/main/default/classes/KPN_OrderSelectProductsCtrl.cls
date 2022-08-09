@@ -1,12 +1,13 @@
 public with sharing class KPN_OrderSelectProductsCtrl {
 
-    @AuraEnabled(cacheable=false)
+    @AuraEnabled(cacheable=true)
     public static Integer getOrderableProductsCount(String orderId) {
         Order currentOrder = OrderSelector.getById(orderId);
         Integer pbesTotal = [
             SELECT Count() 
             FROM PricebookEntry
             WHERE Pricebook2Id = :currentOrder.PriceBook2Id
+            AND IsActive = TRUE
             WITH SECURITY_ENFORCED
         ];
         return pbesTotal;
@@ -14,8 +15,6 @@ public with sharing class KPN_OrderSelectProductsCtrl {
 
     @AuraEnabled(cacheable=false)
     public static AvailableProductsResponse getOrderableProducts(String orderId, Integer offset) {
-        System.debug(orderId);
-        System.debug(offset);
         Order currentOrder = OrderSelector.getById(orderId);
         List<PricebookEntry> pbes = [
             SELECT Id, Name, UnitPrice, Product2Id, IsActive
@@ -76,6 +75,7 @@ public with sharing class KPN_OrderSelectProductsCtrl {
         public AvailableProduct() {}
 
         public AvailableProduct(PricebookEntry pbe) {
+            this();
             this.name = pbe.Name;
             this.listPrice = pbe.UnitPrice;
             this.pbeId = pbe.Id;

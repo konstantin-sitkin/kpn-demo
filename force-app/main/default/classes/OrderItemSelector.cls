@@ -8,6 +8,9 @@ public with sharing class OrderItemSelector {
             WHERE Id = :orderItemId
             WITH SECURITY_ENFORCED
         ];
+        if (orderItems.isEmpty()) {
+            throw new OrderItemSelectorException('No records found for id: ' + orderItemId);
+        }
         return orderItems.get(0);
     }
 
@@ -22,5 +25,9 @@ public with sharing class OrderItemSelector {
             ORDER BY LastModifiedDate DESC
         ];
         return orderItems;
+    }
+
+    public class OrderItemSelectorException extends Exception {
+        
     }
 }
