@@ -1,0 +1,35 @@
+<template>
+    <template if:true={availableProducts.length}>
+        <template for:each={availableProducts} for:item="availableProduct" for:index="availableProductIndex">
+            <div key={availableProduct.pbeId}>
+                <c-kpn-order-product-card order-id={recordId} available-product={availableProduct}></c-kpn-order-product-card>
+            </div>
+        </template>
+        <!--Pagination -->
+        <div class="slds-grid slds-gutters slds-grid_align-center slds-p-top_small">
+            <div class="slds-col">
+                <template if:true={previousDisabled}>
+                    <lightning-button variant="neutral" title="previous" label="Previous" class="slds-float_left"
+                        icon-name="utility:chevronleft" icon-position="left" disabled>
+                    </lightning-button>
+                </template>
+                <template if:false={previousDisabled}>
+                    <lightning-button variant="neutral" title="previous" label="Previous" class="slds-float_left"
+                        icon-name="utility:chevronleft" icon-position="left" onclick={handleButtonPreviousClick}></lightning-button>
+                </template>
+
+            </div>
+            <div class="slds-col slds-var-p-horizontal_large">...</div>
+            <div class="slds-col">
+                <template if:true={nextDisabled}>
+                    <lightning-button variant="neutral" title="next" label="Next" class="slds-float_right"
+                        icon-name="utility:chevronright" icon-position="right" disabled></lightning-button>
+                </template>
+                <template if:false={nextDisabled}>
+                    <lightning-button variant="neutral" title="next" label="Next" class="slds-float_right"
+                        icon-name="utility:chevronright" icon-position="right" onclick={handleButtonNextClick}></lightning-button>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>

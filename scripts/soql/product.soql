@@ -1,0 +1,2 @@
+SELECT CreatedById, CreatedDate, Description, DisplayUrl, ExternalDataSourceId, ExternalId, External_Id__c, Family, Id, IsActive, IsArchived, IsDeleted, LastModifiedById, LastModifiedDate, LastReferencedDate, LastViewedDate, Name, ProductCode, QuantityUnitOfMeasure, StockKeepingUnit, SystemModstamp
+  FROM Product2

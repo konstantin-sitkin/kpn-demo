@@ -1,0 +1,9 @@
+.my-spinner-container {
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.my-spinner {
+    /* background-color: transparent; */
+}

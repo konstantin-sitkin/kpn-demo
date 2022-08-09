@@ -1,0 +1,4 @@
+SELECT AvailableQuantity, CreatedById, CreatedDate, Description, EndDate, Id, IsDeleted, 
+LastModifiedById, LastModifiedDate, ListPrice, OrderId, OrderItemNumber, OriginalOrderItemId, 
+PricebookEntryId, Product2Id, Quantity, ServiceDate, SystemModstamp, TotalPrice, UnitPrice
+  FROM OrderItem

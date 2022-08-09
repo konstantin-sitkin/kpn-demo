@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel>
+    <masterLabel>Order Item Change</masterLabel>
+    <isExposed>true</isExposed>
+    <description>A channel is used by LWC to receive updated Order Item</description>
+    <lightningMessageFields>
+        <description>Order Item Data</description>
+        <fieldName>data</fieldName>
+    </lightningMessageFields>
+</LightningMessageChannel>
