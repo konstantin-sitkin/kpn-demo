@@ -1,5 +1,5 @@
 @IsTest
-public class TestDataFactory {
+public class KPN_TestDataFactory {
 
     public static Account createAccount() {
         Account acc = new Account(Name = 'Base Account');

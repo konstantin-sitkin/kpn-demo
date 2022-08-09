@@ -1,4 +1,4 @@
-public with sharing class OrderItemSelector {
+public with sharing class KPN_OrderItemSelector {
     public static OrderItem getById(String orderItemId) {
         List<OrderItem> orderItems = [
             SELECT Id, Quantity, PricebookEntryId, Product2Id, 

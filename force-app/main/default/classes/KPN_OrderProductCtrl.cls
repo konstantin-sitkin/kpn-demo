@@ -32,6 +32,6 @@ public with sharing class KPN_OrderProductCtrl {
         }
         upsert orderItemToUpsert;
 
-        return OrderItemSelector.getById(orderItemToUpsert.Id);
+        return KPN_OrderItemSelector.getById(orderItemToUpsert.Id);
     }
 }

@@ -3,10 +3,10 @@ private class KPN_OrderProductCtrlTest {
     
     @testSetup
     static void setup() {
-        TestDataFactory.createProductsAndEntries();
-        Account baseAcc = TestDataFactory.createAccount();
-        Contract baseCtr = TestDataFactory.createContract(baseAcc.Id);
-        Order order1 = TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
+        KPN_TestDataFactory.createProductsAndEntries();
+        Account baseAcc = KPN_TestDataFactory.createAccount();
+        Contract baseCtr = KPN_TestDataFactory.createContract(baseAcc.Id);
+        Order order1 = KPN_TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
     }
 
     @isTest
@@ -18,7 +18,7 @@ private class KPN_OrderProductCtrlTest {
         KPN_OrderProductCtrl.addProduct(orderId, pbeId);
         Test.stopTest();
 
-        List<OrderItem> orderItems = OrderItemSelector.getByOrderId(orderId);
+        List<OrderItem> orderItems = KPN_OrderItemSelector.getByOrderId(orderId);
         System.assert(!orderItems.isEmpty(), 'should return order items');
         System.assertEquals(1, orderItems.get(0).Quantity);
     }
@@ -33,7 +33,7 @@ private class KPN_OrderProductCtrlTest {
         KPN_OrderProductCtrl.addProduct(orderId, pbeId);
         Test.stopTest();
 
-        List<OrderItem> orderItems = OrderItemSelector.getByOrderId(orderId);
+        List<OrderItem> orderItems = KPN_OrderItemSelector.getByOrderId(orderId);
         System.assert(!orderItems.isEmpty(), 'should return order items');
         System.assertEquals(2, orderItems.get(0).Quantity);
     }

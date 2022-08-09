@@ -1,4 +1,4 @@
-public with sharing class OrderSelector {
+public with sharing class KPN_OrderSelector {
     public static Order getById(String orderId) {
         List<Order> records = [
             SELECT Id,

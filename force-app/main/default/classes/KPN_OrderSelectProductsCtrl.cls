@@ -2,7 +2,7 @@ public with sharing class KPN_OrderSelectProductsCtrl {
 
     @AuraEnabled(cacheable=true)
     public static Integer getOrderableProductsCount(String orderId) {
-        Order currentOrder = OrderSelector.getById(orderId);
+        Order currentOrder = KPN_OrderSelector.getById(orderId);
         Integer pbesTotal = [
             SELECT Count() 
             FROM PricebookEntry
@@ -15,7 +15,7 @@ public with sharing class KPN_OrderSelectProductsCtrl {
 
     @AuraEnabled(cacheable=false)
     public static AvailableProductsResponse getOrderableProducts(String orderId, Integer offset) {
-        Order currentOrder = OrderSelector.getById(orderId);
+        Order currentOrder = KPN_OrderSelector.getById(orderId);
         List<PricebookEntry> pbes = [
             SELECT Id, Name, UnitPrice, Product2Id, IsActive
             FROM PricebookEntry

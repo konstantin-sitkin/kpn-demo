@@ -3,17 +3,17 @@ private class KPN_OrderViewOrderItemsCtrlTest {
     
     @testSetup
     static void setup() {
-        TestDataFactory.createProductsAndEntries();
-        Account baseAcc = TestDataFactory.createAccount();
-        Contract baseCtr = TestDataFactory.createContract(baseAcc.Id);
-        Order order1 = TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
+        KPN_TestDataFactory.createProductsAndEntries();
+        Account baseAcc = KPN_TestDataFactory.createAccount();
+        Contract baseCtr = KPN_TestDataFactory.createContract(baseAcc.Id);
+        Order order1 = KPN_TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
     }
 
     @isTest
     static void testGetOrderItems() {
         Id orderId = [SELECT Id FROM Order LIMIT 1].Id;
         Integer orderItemSize = 201;
-        TestDataFactory.createOrderItems(orderId, orderItemSize);
+        KPN_TestDataFactory.createOrderItems(orderId, orderItemSize);
 
         Test.startTest();
         List<OrderItem> orderItemsActual = KPN_OrderViewOrderItemsCtrl.getOrderItems(orderId);

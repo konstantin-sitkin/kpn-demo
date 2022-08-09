@@ -1,12 +1,12 @@
 @IsTest
-private class OrderSelectorTest {
+private class KPN_OrderSelectorTest {
 
     @testSetup
     static void setup() {
-        TestDataFactory.createProductsAndEntries();
-        Account baseAcc = TestDataFactory.createAccount();
-        Contract baseCtr = TestDataFactory.createContract(baseAcc.Id);
-        Order order1 = TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
+        KPN_TestDataFactory.createProductsAndEntries();
+        Account baseAcc = KPN_TestDataFactory.createAccount();
+        Contract baseCtr = KPN_TestDataFactory.createContract(baseAcc.Id);
+        Order order1 = KPN_TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
     }
     
     @isTest
@@ -14,8 +14,8 @@ private class OrderSelectorTest {
         Id orderId = null;
         Boolean exceptionThrown = false;
         try {
-            OrderSelector.getById(orderId);
-        } catch (OrderSelector.OrderSelectorException ose) {
+            KPN_OrderSelector.getById(orderId);
+        } catch (KPN_OrderSelector.OrderSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }
@@ -29,8 +29,8 @@ private class OrderSelectorTest {
         Order actualOrder;
         Boolean exceptionThrown = false;
         try {
-            actualOrder = OrderSelector.getById(orderId);
-        } catch (OrderSelector.OrderSelectorException ose) {
+            actualOrder = KPN_OrderSelector.getById(orderId);
+        } catch (KPN_OrderSelector.OrderSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }

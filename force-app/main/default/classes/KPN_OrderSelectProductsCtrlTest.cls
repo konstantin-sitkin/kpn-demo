@@ -3,10 +3,10 @@ private class KPN_OrderSelectProductsCtrlTest {
    
     @testSetup
     static void setup() {
-        TestDataFactory.createProductsAndEntries();
-        Account baseAcc = TestDataFactory.createAccount();
-        Contract baseCtr = TestDataFactory.createContract(baseAcc.Id);
-        Order order1 = TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
+        KPN_TestDataFactory.createProductsAndEntries();
+        Account baseAcc = KPN_TestDataFactory.createAccount();
+        Contract baseCtr = KPN_TestDataFactory.createContract(baseAcc.Id);
+        Order order1 = KPN_TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
     }
 
     @isTest

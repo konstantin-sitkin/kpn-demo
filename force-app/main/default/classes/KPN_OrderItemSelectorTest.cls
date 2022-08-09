@@ -1,13 +1,13 @@
 @IsTest
-private class OrderItemSelectorTest {
+private class KPN_OrderItemSelectorTest {
 
     @testSetup
     static void setup() {
-        TestDataFactory.createProductsAndEntries();
-        Account baseAcc = TestDataFactory.createAccount();
-        Contract baseCtr = TestDataFactory.createContract(baseAcc.Id);
-        Order order1 = TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
-        TestDataFactory.createOrderItems(order1.Id, 201);
+        KPN_TestDataFactory.createProductsAndEntries();
+        Account baseAcc = KPN_TestDataFactory.createAccount();
+        Contract baseCtr = KPN_TestDataFactory.createContract(baseAcc.Id);
+        Order order1 = KPN_TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
+        KPN_TestDataFactory.createOrderItems(order1.Id, 201);
     }
 
     @isTest
@@ -15,8 +15,8 @@ private class OrderItemSelectorTest {
         Id orderItemId = null;
         Boolean exceptionThrown = false;
         try {
-            OrderItemSelector.getById(orderItemId);
-        } catch (OrderItemSelector.OrderItemSelectorException ose) {
+            KPN_OrderItemSelector.getById(orderItemId);
+        } catch (KPN_OrderItemSelector.OrderItemSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }
@@ -30,8 +30,8 @@ private class OrderItemSelectorTest {
         OrderItem actualOrderItem;
         Boolean exceptionThrown = false;
         try {
-            actualOrderItem = OrderItemSelector.getById(orderItemId);
-        } catch (OrderItemSelector.OrderItemSelectorException ose) {
+            actualOrderItem = KPN_OrderItemSelector.getById(orderItemId);
+        } catch (KPN_OrderItemSelector.OrderItemSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }
@@ -47,8 +47,8 @@ private class OrderItemSelectorTest {
         List<OrderItem> orderItems;
         Boolean exceptionThrown = false;
         try {
-            orderItems = OrderItemSelector.getByOrderId(orderId);
-        } catch (OrderItemSelector.OrderItemSelectorException ose) {
+            orderItems = KPN_OrderItemSelector.getByOrderId(orderId);
+        } catch (KPN_OrderItemSelector.OrderItemSelectorException ose) {
             System.debug(ose.getMessage());
             exceptionThrown = true;
         }
