@@ -1,4 +1,16 @@
+/**
+ * @description  : Selector pattern implementation for Order
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-09
+**/
 public with sharing class KPN_OrderSelector {
+    /**
+    * @description Order Selector by Order.Id
+    * @author Konstantin Sitkin | 2022-08-09 
+    * @param orderId 
+    * @return Order 
+    * @throws OrderSelectorException 
+    **/
     public static Order getById(String orderId) {
         List<Order> records = [
             SELECT Id,

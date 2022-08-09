@@ -1,3 +1,8 @@
+/**
+ * @description  : KPN_OrderSelectProductsCtrl Test
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-09
+**/
 @IsTest
 private class KPN_OrderSelectProductsCtrlTest {
    

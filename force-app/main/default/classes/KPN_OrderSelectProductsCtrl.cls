@@ -1,26 +1,36 @@
+/**
+ * @description  : Controller for LWC kpnOrderSelectProducts
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-09
+ **/
 public with sharing class KPN_OrderSelectProductsCtrl {
-
+    /**
+     * @description cacheable total of available PricebookEntries to predict last page
+     * @author Konstantin Sitkin | 2022-08-09
+     * @param orderId
+     * @return Integer
+     **/
     @AuraEnabled(cacheable=true)
     public static Integer getOrderableProductsCount(String orderId) {
         Order currentOrder = KPN_OrderSelector.getById(orderId);
-        Integer pbesTotal = [
-            SELECT Count() 
-            FROM PricebookEntry
-            WHERE Pricebook2Id = :currentOrder.PriceBook2Id
-            AND IsActive = TRUE
-            WITH SECURITY_ENFORCED
-        ];
+        Integer pbesTotal = [SELECT COUNT() FROM PricebookEntry WHERE Pricebook2Id = :currentOrder.PriceBook2Id AND IsActive = TRUE WITH SECURITY_ENFORCED];
         return pbesTotal;
     }
 
+    /**
+    * @description Request for paged products with given offset and page size
+    * @author Konstantin Sitkin | 2022-08-09 
+    * @param orderId 
+    * @param offset 
+    * @return AvailableProductsResponse 
+    **/
     @AuraEnabled(cacheable=false)
     public static AvailableProductsResponse getOrderableProducts(String orderId, Integer offset) {
         Order currentOrder = KPN_OrderSelector.getById(orderId);
         List<PricebookEntry> pbes = [
             SELECT Id, Name, UnitPrice, Product2Id, IsActive
             FROM PricebookEntry
-            WHERE Pricebook2Id = :currentOrder.PriceBook2Id
-            AND IsActive = TRUE
+            WHERE Pricebook2Id = :currentOrder.PriceBook2Id AND IsActive = TRUE
             WITH SECURITY_ENFORCED
             ORDER BY Name
             LIMIT :KPN_AppConstants.PRODUCTS_PAGE_SIZE
@@ -32,7 +42,12 @@ public with sharing class KPN_OrderSelectProductsCtrl {
         res.consume(pbes);
         return res;
     }
-    
+
+    /**
+     * @description  : Paged Wrapper for available products with extra attributes
+     * @author       : Konstantin Sitkin
+     * @created by   : 2022-08-09
+     **/
     public class AvailableProductsResponse {
         @AuraEnabled
         public List<AvailableProduct> availableProducts;
@@ -63,6 +78,11 @@ public with sharing class KPN_OrderSelectProductsCtrl {
         }
     }
 
+    /**
+     * @description  : Product/PriceBookEntry wrapper
+     * @author       : Konstantin Sitkin
+     * @created by   : 2022-08-09
+     **/
     public class AvailableProduct {
         @AuraEnabled
         public String name;
@@ -72,7 +92,8 @@ public with sharing class KPN_OrderSelectProductsCtrl {
         public String pbeId;
         @AuraEnabled
         public String productId;
-        public AvailableProduct() {}
+        public AvailableProduct() {
+        }
 
         public AvailableProduct(PricebookEntry pbe) {
             this();
@@ -82,5 +103,4 @@ public with sharing class KPN_OrderSelectProductsCtrl {
             this.productId = pbe.Product2Id;
         }
     }
-
 }

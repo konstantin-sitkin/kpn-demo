@@ -1,6 +1,10 @@
+/**
+ * @description  : KPN_OrderSelector Test
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-09
+**/
 @IsTest
 private class KPN_OrderSelectorTest {
-
     @testSetup
     static void setup() {
         KPN_TestDataFactory.createProductsAndEntries();
@@ -8,12 +12,12 @@ private class KPN_OrderSelectorTest {
         Contract baseCtr = KPN_TestDataFactory.createContract(baseAcc.Id);
         Order order1 = KPN_TestDataFactory.createOrder(baseAcc.Id, baseCtr.Id);
     }
-    
+
     @isTest
     static void testGetByIdNull() {
         Id orderId = null;
         Boolean exceptionThrown = false;
-        
+
         Test.startTest();
         try {
             KPN_OrderSelector.getById(orderId);
@@ -24,7 +28,7 @@ private class KPN_OrderSelectorTest {
         Test.stopTest();
 
         System.assert(exceptionThrown, 'an exception should be thrown on null id');
-    } 
+    }
 
     @isTest
     static void testGetByIdRecordFound() {
@@ -44,6 +48,5 @@ private class KPN_OrderSelectorTest {
         System.assert(!exceptionThrown, 'no exception should be thrown on valid id');
         System.assertNotEquals(null, actualOrder, 'an order should be returned');
         System.assertEquals(orderId, actualOrder.Id, 'an exact order should be found by id');
-    } 
-
+    }
 }

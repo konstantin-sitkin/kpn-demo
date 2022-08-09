@@ -1,6 +1,10 @@
+/**
+ * @description  : KPN_OrderProductCtrl Test
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-09
+ **/
 @IsTest
 private class KPN_OrderProductCtrlTest {
-    
     @testSetup
     static void setup() {
         KPN_TestDataFactory.createProductsAndEntries();
@@ -20,7 +24,7 @@ private class KPN_OrderProductCtrlTest {
 
         List<OrderItem> orderItems = KPN_OrderItemSelector.getByOrderId(orderId);
         System.assert(!orderItems.isEmpty(), 'should return order items');
-        System.assertEquals(1, orderItems.get(0).Quantity);
+        System.assertEquals(1, orderItems.get(0).Quantity, 'an order item record should be created with quantity 1');
     }
 
     @isTest
@@ -35,6 +39,6 @@ private class KPN_OrderProductCtrlTest {
 
         List<OrderItem> orderItems = KPN_OrderItemSelector.getByOrderId(orderId);
         System.assert(!orderItems.isEmpty(), 'should return order items');
-        System.assertEquals(2, orderItems.get(0).Quantity);
+        System.assertEquals(2, orderItems.get(0).Quantity, 'an existing order item record quantity should be increased');
     }
 }
