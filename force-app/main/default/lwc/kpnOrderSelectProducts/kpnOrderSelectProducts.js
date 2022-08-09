@@ -1,8 +1,11 @@
 import { LightningElement, api, wire } from "lwc";
+import { getRecord } from "lightning/uiRecordApi";
 import { parseApexException, showErrorToast, showSuccessToast, showValidationToast } from "c/kpnUtils";
 
 import apexGetOrderableProducts from "@salesforce/apex/KPN_OrderSelectProductsCtrl.getOrderableProducts";
 import apexGetOrderableProductsCount from "@salesforce/apex/KPN_OrderSelectProductsCtrl.getOrderableProductsCount";
+
+import FIELD_STATUS from "@salesforce/schema/Order.Status";
 
 export default class OrderSelectProducts extends LightningElement {
     // dynamic
@@ -13,6 +16,16 @@ export default class OrderSelectProducts extends LightningElement {
     // api
     @api
     recordId; // param from record page
+
+    @wire(getRecord, { recordId: "$recordId", fields: [FIELD_STATUS] })
+    wiredRecord({ error, data }) {
+        if (data) {
+            console.log("kpnOrderSelectProducts received an update");
+            this.initState();
+        } else if (error) {
+            console.log("error data", error);
+        }
+    }
 
     @api
     get previousDisabled() {
@@ -26,10 +39,17 @@ export default class OrderSelectProducts extends LightningElement {
 
     @api
     get paginationEnabled() {
+        if (!this.productsTotal || !this.pageSize) {
+            return false;
+        } 
+        
         return this.productsTotal > this.pageSize;
     }
 
     connectedCallback() {
+    }
+
+    initState() {
         this.currentOffset = 0;
         this.productsTotal = 0;
         this.pageSize = 0;

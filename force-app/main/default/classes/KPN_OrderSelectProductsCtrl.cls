@@ -10,10 +10,32 @@ public with sharing class KPN_OrderSelectProductsCtrl {
      * @param orderId
      * @return Integer
      **/
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled(cacheable=false)
     public static Integer getOrderableProductsCount(String orderId) {
-        Order currentOrder = KPN_OrderSelector.getById(orderId);
-        Integer pbesTotal = [SELECT COUNT() FROM PricebookEntry WHERE Pricebook2Id = :currentOrder.PriceBook2Id AND IsActive = TRUE WITH SECURITY_ENFORCED];
+        Order currentOrder = KPN_OrderSelector.getByIdWithChildren(orderId);
+        Integer pbesTotal;
+        
+        if (currentOrder.Status == KPN_AppConstants.ORDER_STATUS_ACTIVATED) {
+            List<Id> existingPbeIds = new List<Id>();
+            for (OrderItem oItem : currentOrder.OrderItems) {
+                existingPbeIds.add(oItem.PricebookEntryId);
+            }
+            pbesTotal = [
+                SELECT Count()
+                FROM PricebookEntry
+                WHERE Pricebook2Id = :currentOrder.PriceBook2Id 
+                AND IsActive = TRUE
+                AND Id IN :existingPbeIds
+            ];
+        } else {
+            pbesTotal = [
+                SELECT Count()
+                FROM PricebookEntry
+                WHERE Pricebook2Id = :currentOrder.PriceBook2Id 
+                AND IsActive = TRUE
+            ];
+        }
+
         return pbesTotal;
     }
 
@@ -26,16 +48,37 @@ public with sharing class KPN_OrderSelectProductsCtrl {
     **/
     @AuraEnabled(cacheable=false)
     public static AvailableProductsResponse getOrderableProducts(String orderId, Integer offset) {
-        Order currentOrder = KPN_OrderSelector.getById(orderId);
-        List<PricebookEntry> pbes = [
-            SELECT Id, Name, UnitPrice, Product2Id, IsActive
-            FROM PricebookEntry
-            WHERE Pricebook2Id = :currentOrder.PriceBook2Id AND IsActive = TRUE
-            WITH SECURITY_ENFORCED
-            ORDER BY Name
-            LIMIT :KPN_AppConstants.PRODUCTS_PAGE_SIZE
-            OFFSET :offset
-        ];
+        Order currentOrder = KPN_OrderSelector.getByIdWithChildren(orderId);
+        List<PricebookEntry> pbes;
+        
+        if (currentOrder.Status == KPN_AppConstants.ORDER_STATUS_ACTIVATED) {
+            List<Id> existingPbeIds = new List<Id>();
+            for (OrderItem oItem : currentOrder.OrderItems) {
+                existingPbeIds.add(oItem.PricebookEntryId);
+            }
+            pbes = [
+                SELECT Id, Name, UnitPrice, Product2Id, IsActive
+                FROM PricebookEntry
+                WHERE Pricebook2Id = :currentOrder.PriceBook2Id 
+                AND IsActive = TRUE
+                AND Id IN :existingPbeIds
+                WITH SECURITY_ENFORCED
+                ORDER BY Name
+                LIMIT :KPN_AppConstants.PRODUCTS_PAGE_SIZE
+                OFFSET :offset
+            ];
+        } else {
+            pbes = [
+                SELECT Id, Name, UnitPrice, Product2Id, IsActive
+                FROM PricebookEntry
+                WHERE Pricebook2Id = :currentOrder.PriceBook2Id 
+                AND IsActive = TRUE
+                WITH SECURITY_ENFORCED
+                ORDER BY Name
+                LIMIT :KPN_AppConstants.PRODUCTS_PAGE_SIZE
+                OFFSET :offset
+            ];
+        }
 
         AvailableProductsResponse res = new AvailableProductsResponse();
         res.offset = offset;

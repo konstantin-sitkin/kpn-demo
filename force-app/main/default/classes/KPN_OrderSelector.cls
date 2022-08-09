@@ -42,7 +42,12 @@ public with sharing class KPN_OrderSelector {
                 PriceBook2Id,
                 Account.AccountNumber,
                 (
-                    SELECT Product2.Name, Product2.ProductCode, UnitPrice, Quantity 
+                    SELECT Id,
+                        Product2.Name, 
+                        Product2.ProductCode, 
+                        UnitPrice, 
+                        Quantity,
+                        PricebookEntryId
                     FROM OrderItems
                 )
             FROM Order

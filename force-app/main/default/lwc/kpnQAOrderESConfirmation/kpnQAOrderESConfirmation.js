@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from "lwc";
-import { getRecord } from "lightning/uiRecordApi";
+import { getRecord, getRecordNotifyChange } from "lightning/uiRecordApi";
 import { FlowNavigationFinishEvent } from "lightning/flowSupport";
 import { parseApexException, showErrorToast, showSuccessToast, showValidationToast } from "c/kpnUtils";
 
@@ -12,6 +12,7 @@ export default class OrderESConfirmation extends LightningElement {
     @api recordId;
 
     isOrderProcessing;
+    isFlowAlreadyLaunched = false;
 
     @wire(getRecord, { recordId: "$recordId", fields: [FIELD_STATUS] })
     wiredRecord({ error, data }) {
@@ -31,6 +32,10 @@ export default class OrderESConfirmation extends LightningElement {
     errorCallback() {}
 
     checkOrderValidity() {
+        if (this.isFlowAlreadyLaunched) {
+            return;
+        }
+        this.isFlowAlreadyLaunched = true;
         if (!this.orderStatus) {
             console.log("order status should be retrieved");
             return;
@@ -40,7 +45,6 @@ export default class OrderESConfirmation extends LightningElement {
             this.closeFlow();
             return;
         }
-
         this.externalSystemConfirmOrderSafe();
     }
 
@@ -61,6 +65,7 @@ export default class OrderESConfirmation extends LightningElement {
             orderId: this.recordId,
         });
         showSuccessToast(this, `Order is ${ORDER_STATUS_ACTIVATED}`);
+        getRecordNotifyChange([{ recordId: this.recordId }]);
         this.closeFlow();
     }
 
