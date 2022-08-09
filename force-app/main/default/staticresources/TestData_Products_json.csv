@@ -1,0 +1,212 @@
+Id,Name,ProductCode,Description,Family,IsActive
+01t8V000006dueqQAA,Fundamentals of Wavelets,FWXX001,"Goswami, Jaideva",Books,true
+01t8V000006duerQAA,Data Smart,DSXX002,"Foreman, John",Books,true
+01t8V000006duesQAA,God Created the Integers,GCIX003,"Hawking, Stephen",Books,true
+01t8V000006duetQAA,Superfreakonomics,SXXX004,"Dubner, Stephen",Books,true
+01t8V000006dueuQAA,Orientalism,OXXX005,"Said, Edward",Books,true
+01t8V000006duevQAA,The Nature of Statistical Learning Theory,NSLT006,"Vapnik, Vladimir",Books,true
+01t8V000006duewQAA,Integration of the Indian States,IISX007,"Menon, V P",Books,true
+01t8V000006duexQAA,The Drunkard's Walk,DWTX008,"Mlodinow, Leonard",Books,true
+01t8V000006dueyQAA,Image Processing & Mathematical Morphology,IPMM009,"Shih, Frank",Books,true
+01t8V000006duezQAA,How to Think Like Sherlock Holmes,HTLS010,"Konnikova, Maria",Books,true
+01t8V000006duf0QAA,Data Scientists at Work,DSWX011,Sebastian Gutierrez,Books,true
+01t8V000006duf1QAA,Slaughterhouse Five,SFXX012,"Vonnegut, Kurt",Books,true
+01t8V000006duf2QAA,Birth of a Theorem,BTXX013,"Villani, Cedric",Books,true
+01t8V000006duf3QAA,Structure & Interpretation of Computer Programs,SICP014,"Sussman, Gerald",Books,true
+01t8V000006duf4QAA,The Age of Wrath,AWTX015,"Eraly, Abraham",Books,true
+01t8V000006duf5QAA,The Trial,TTXX016,"Kafka, Frank",Books,true
+01t8V000006duf6QAA,Statistical Decision Theory',SDTX017,"Pratt, John",Books,true
+01t8V000006duf7QAA,Data Mining Handbook,DMHX018,"Nisbet, Robert",Books,true
+01t8V000006duf8QAA,The New Machiavelli,NMTX019,"Wells, H. G.",Books,true
+01t8V000006duf9QAA,Physics & Philosophy,PPXX020,"Heisenberg, Werner",Books,true
+01t8V000006dufAQAQ,Making Software,MSXX021,"Oram, Andy",Books,true
+01t8V000006dufBQAQ,Vol I Analysis,AVIX022,"Tao, Terence",Books,true
+01t8V000006dufCQAQ,Machine Learning for Hackers,MLHX023,"Conway, Drew",Books,true
+01t8V000006dufDQAQ,The Signal and the Noise,SNTX024,"Silver, Nate",Books,true
+01t8V000006dufEQAQ,Python for Data Analysis,PDAX025,"McKinney, Wes",Books,true
+01t8V000006dufFQAQ,Introduction to Algorithms,IAXX026,"Cormen, Thomas",Books,true
+01t8V000006dufGQAQ,The Beautiful and the Damned,BDTX027,"Deb, Siddhartha",Books,true
+01t8V000006dufHQAQ,The Outsider,OTXX028,"Camus, Albert",Books,true
+01t8V000006dufIQAQ,The - Vol I Complete Sherlock Holmes,CSHT029,"Doyle, Arthur Conan",Books,true
+01t8V000006dufJQAQ,The - Vol II Complete Sherlock Holmes,CSHT030,"Doyle, Arthur Conan",Books,true
+01t8V000006dufKQAQ,The Wealth of Nations,WNTX031,"Smith, Adam",Books,true
+01t8V000006dufLQAQ,The Pillars of the Earth,PETX032,"Follett, Ken",Books,true
+01t8V000006dufMQAQ,Mein Kampf,MKXX033,"Hitler, Adolf",Books,true
+01t8V000006dufNQAQ,The Tao of Physics,TPTX034,"Capra, Fritjof",Books,true
+01t8V000006dufOQAQ,Surely You're Joking Mr Feynman,SYJM035,"Feynman, Richard",Books,true
+01t8V000006dufPQAQ,A Farewell to Arms,FAAX036,"Hemingway, Ernest",Books,true
+01t8V000006dufQQAQ,The Veteran,VTXX037,"Forsyth, Frederick",Books,true
+01t8V000006dufRQAQ,False Impressions,FIXX038,"Archer, Jeffery",Books,true
+01t8V000006dufSQAQ,The Last Lecture,LLTX039,"Pausch, Randy",Books,true
+01t8V000006dufTQAQ,Return of the Primitive,RPXX040,"Rand, Ayn",Books,true
+01t8V000006dufUQAQ,Jurassic Park,JPXX041,"Crichton, Michael",Books,true
+01t8V000006dufVQAQ,A Russian Journal,RJAX042,"Steinbeck, John",Books,true
+01t8V000006dufWQAQ,Tales of Mystery and Imagination,TMIX043,"Poe, Edgar Allen",Books,true
+01t8V000006dufXQAQ,Freakonomics,FXXX044,"Dubner, Stephen",Books,true
+01t8V000006dufYQAQ,The Hidden Connections,HCTX045,"Capra, Fritjof",Books,true
+01t8V000006dufZQAQ,The Story of Philosophy,SPTX046,"Durant, Will",Books,true
+01t8V000006dufaQAA,Asami Asami,AAXX047,"Deshpande, P L",Books,true
+01t8V000006dufbQAA,Journal of a Novel,JNXX048,"Steinbeck, John",Books,true
+01t8V000006dufcQAA,Once There Was a War,OTWW049,"Steinbeck, John",Books,true
+01t8V000006dufdQAA,The Moon is Down,MDTX050,"Steinbeck, John",Books,true
+01t8V000006dufeQAA,The Brethren,BTXX051,"Grisham, John",Books,true
+01t8V000006duffQAA,In a Free State,IFSX052,"Naipaul, V. S.",Books,true
+01t8V000006dufgQAA,Catch 22,C22X053,"Heller, Joseph",Books,true
+01t8V000006dufhQAA,The Complete Mastermind,CMTX054,BBC,Books,true
+01t8V000006dufiQAA,Dylan on Dylan,DDXX055,"Dylan, Bob",Books,true
+01t8V000006dufjQAA,Soft Computing & Intelligent Systems,SCIS056,"Gupta, Madan",Books,true
+01t8V000006dufkQAA,Textbook of Economic Theory,TETX057,"Stonier, Alfred",Books,true
+01t8V000006duflQAA,Econometric Analysis,EAXX058,"Greene, W. H.",Books,true
+01t8V000006dufmQAA,Learning OpenCV,LOCV059,"Bradsky, Gary",Books,true
+01t8V000006dufnQAA,Data Structures Using C & C++,DSUC060,"Tanenbaum, Andrew",Books,true
+01t8V000006dufoQAA,A Modern Approach Computer Vision,CVAM061,"Forsyth, David",Books,true
+01t8V000006dufpQAA,Principles of Communication Systems,PCSX062,"Taub, Schilling",Books,true
+01t8V000006dufqQAA,Let Us C,LUCX063,"Kanetkar, Yashwant",Books,true
+01t8V000006dufrQAA,The Amulet of Samarkand,ASTX064,"Stroud, Jonathan",Books,true
+01t8V000006dufsQAA,Crime and Punishment,CPXX065,"Dostoevsky, Fyodor",Books,true
+01t8V000006duftQAA,Angels & Demons,ADXX066,"Brown, Dan",Books,true
+01t8V000006dufuQAA,The Argumentative Indian,AITX067,"Sen, Amartya",Books,true
+01t8V000006dufvQAA,Sea of Poppies,SPXX068,"Ghosh, Amitav",Books,true
+01t8V000006dufwQAA,The Idea of Justice,IJTX069,"Sen, Amartya",Books,true
+01t8V000006dufxQAA,A Raisin in the Sun,RSAX070,"Hansberry, Lorraine",Books,true
+01t8V000006dufyQAA,All the President's Men,APMX071,"Woodward, Bob",Books,true
+01t8V000006dufzQAA,A Prisoner of Birth,PBAX072,"Archer, Jeffery",Books,true
+01t8V000006dug0QAA,Scoop!,S!XX073,"Nayar, Kuldip",Books,true
+01t8V000006dug1QAA,Ahe Manohar Tari,AMTX074,"Deshpande, Sunita",Books,true
+01t8V000006dug2QAA,The Last Mughal,LMTX075,"Dalrymple, William",Books,true
+01t8V000006dug3QAA,Vol 39 No. 1 Social Choice & Welfare,SCWV076,Various,Books,true
+01t8V000006dug4QAA,Radiowaril Bhashane & Shrutika,RBSX077,"Deshpande, P L",Books,true
+01t8V000006dug5QAA,Gun Gayin Awadi,GGAX078,"Deshpande, P L",Books,true
+01t8V000006dug6QAA,Aghal Paghal,APXX079,"Deshpande, P L",Books,true
+01t8V000006dug7QAA,Maqta-e-Ghalib,MGXX080,"Garg, Sanjay",Books,true
+01t8V000006dug8QAA,Beyond Degrees,BDXX081,,Books,true
+01t8V000006dug9QAA,Manasa,MXXX082,"Kale, V P",Books,true
+01t8V000006dugAQAQ,India from Midnight to Milennium,IMMX083,"Tharoor, Shashi",Books,true
+01t8V000006dugBQAQ,The World's Greatest Trials,WGTT084,,Books,true
+01t8V000006dugCQAQ,The Great Indian Novel,GINT085,"Tharoor, Shashi",Books,true
+01t8V000006dugDQAQ,O Jerusalem!,OJ!X086,"Lapierre, Dominique",Books,true
+01t8V000006dugEQAQ,The City of Joy,CJTX087,"Lapierre, Dominique",Books,true
+01t8V000006dugFQAQ,Freedom at Midnight,FMXX088,"Lapierre, Dominique",Books,true
+01t8V000006dugGQAQ,The Winter of Our Discontent,WODT089,"Steinbeck, John",Books,true
+01t8V000006dugHQAQ,On Education,OEXX090,"Russell, Bertrand",Books,true
+01t8V000006dugIQAQ,Free Will,FWXX091,"Harris, Sam",Books,true
+01t8V000006dugJQAQ,Bookless in Baghdad,BBXX092,"Tharoor, Shashi",Books,true
+01t8V000006dugKQAQ,The Case of the Lame Canary,CLCT093,"Gardner, Earle Stanley",Books,true
+01t8V000006dugLQAQ,The Theory of Everything,TETX094,"Hawking, Stephen",Books,true
+01t8V000006dugMQAQ,New Markets & Other Essays,NMOE095,"Drucker, Peter",Books,true
+01t8V000006dugNQAQ,Electric Universe,EUXX096,"Bodanis, David",Books,true
+01t8V000006dugOQAQ,The Hunchback of Notre Dame,HNDT097,"Hugo, Victor",Books,true
+01t8V000006dugPQAQ,Burning Bright,BBXX098,"Steinbeck, John",Books,true
+01t8V000006dugQQAQ,The Age of Discontuinity,ADTX099,"Drucker, Peter",Books,true
+01t8V000006dugRQAQ,Doctor in the Nude,DNXX100,"Gordon, Richard",Books,true
+01t8V000006dugSQAQ,Down and Out in Paris & London,DOPL101,"Orwell, George",Books,true
+01t8V000006dugTQAQ,Identity & Violence,IVXX102,"Sen, Amartya",Books,true
+01t8V000006dugUQAQ,Beyond the Three Seas,BTSX103,"Dalrymple, William",Books,true
+01t8V000006dugVQAQ,The World's Greatest Short Stories,WGSS104,,Books,true
+01t8V000006dugWQAQ,Talking Straight,TSXX105,"Iacoca, Lee",Books,true
+01t8V000006dugXQAQ,Vol 3 Maugham's Collected Short Stories,MCSS106,"Maugham, William S",Books,true
+01t8V000006dugYQAQ,The Phantom of Manhattan,PMTX107,"Forsyth, Frederick",Books,true
+01t8V000006dugZQAQ,Ashenden of The British Agent,ATBA108,"Maugham, William S",Books,true
+01t8V000006dugaQAA,Zen & The Art of Motorcycle Maintenance,ZTAM109,"Pirsig, Robert",Books,true
+01t8V000006dugbQAA,The Great War for Civilization,GWCT110,"Fisk, Robert",Books,true
+01t8V000006dugcQAA,We the Living,WLXX111,"Rand, Ayn",Books,true
+01t8V000006dugdQAA,The Artist and the Mathematician,AMTX112,"Aczel, Amir",Books,true
+01t8V000006dugeQAA,History of Western Philosophy,HWPX113,"Russell, Bertrand",Books,true
+01t8V000006dugfQAA,Selected Short Stories,SSSX114,,Books,true
+01t8V000006duggQAA,Rationality & Freedom,RFXX115,"Sen, Amartya",Books,true
+01t8V000006dughQAA,Clash of Civilizations and Remaking of the World Order,CCRW116,"Huntington, Samuel",Books,true
+01t8V000006dugiQAA,Uncommon Wisdom,UWXX117,"Capra, Fritjof",Books,true
+01t8V000006dugjQAA,One,OXXX118,"Bach, Richard",Books,true
+01t8V000006dugkQAA,Karl Marx Biography,KMBX119,,Books,true
+01t8V000006duglQAA,To Sir With Love,TSWL120,Braithwaite,Books,true
+01t8V000006dugmQAA,Half A Life,HALX121,"Naipaul, V S",Books,true
+01t8V000006dugnQAA,The Discovery of India,DITX122,"Nehru, Jawaharlal",Books,true
+01t8V000006dugoQAA,Apulki,AXXX123,"Deshpande, P L",Books,true
+01t8V000006dugpQAA,Unpopular Essays,UEXX124,"Russell, Bertrand",Books,true
+01t8V000006dugqQAA,The Deceiver,DTXX125,"Forsyth, Frederick",Books,true
+01t8V000006dugrQAA,Veil: Secret Wars of the CIA,VSWC126,"Woodward, Bob",Books,true
+01t8V000006dugsQAA,Char Shabda,CSXX127,"Deshpande, P L",Books,true
+01t8V000006dugtQAA,Rosy is My Relative,RMRX128,"Durrell, Gerald",Books,true
+01t8V000006duguQAA,The Moon and Sixpence,MSTX129,"Maugham, William S",Books,true
+01t8V000006dugvQAA,Political Philosophers,PPXX130,,Books,true
+01t8V000006dugwQAA,A Short History of the World,SHWA131,"Wells, H G",Books,true
+01t8V000006dugxQAA,The Trembling of a Leaf,TLTX132,"Maugham, William S",Books,true
+01t8V000006dugyQAA,Doctor on the Brain,DBXX133,"Gordon, Richard",Books,true
+01t8V000006dugzQAA,Simpsons & Their Mathematical Secrets,STMS134,"Singh, Simon",Books,true
+01t8V000006duh0QAA,Pattern Classification,PCXX135,"Duda, Hart",Books,true
+01t8V000006duh1QAA,From Beirut to Jerusalem,FBJX136,"Friedman, Thomas",Books,true
+01t8V000006duh2QAA,The Code Book,CBTX137,"Singh, Simon",Books,true
+01t8V000006duh3QAA,The Age of the Warrior,AWTX138,"Fisk, Robert",Books,true
+01t8V000006duh4QAA,Final Crisis,FCXX139,,Books,true
+01t8V000006duh5QAA,The Killing Joke,KJTX140,,Books,true
+01t8V000006duh6QAA,Flashpoint,FXXX141,,Books,true
+01t8V000006duh7QAA,Batman Earth One,BEOX142,,Books,true
+01t8V000006duh8QAA,Crisis on Infinite Earths,CIEX143,,Books,true
+01t8V000006duh9QAA,The Numbers Behind Numb3rs,NBN3144,"Devlin, Keith",Books,true
+01t8V000006duhAQAQ,Superman Earth One - 1,SEO1145,,Books,true
+01t8V000006duhBQAQ,Superman Earth One - 2,SEO2146,,Books,true
+01t8V000006duhCQAQ,Justice League: Throne of Atlantis,JLTA147,,Books,true
+01t8V000006duhDQAQ,Justice League: The Villain's Journey,JLTV148,,Books,true
+01t8V000006duhEQAQ,The Death of Superman,DSTX149,,Books,true
+01t8V000006duhFQAQ,History of the DC Universe,HDCU150,,Books,true
+01t8V000006duhGQAQ,Batman: The Long Halloween,BTLH151,,Books,true
+01t8V000006duhHQAQ,A Life in Letters,LLAX152,"Steinbeck, John",Books,true
+01t8V000006duhIQAQ,The Information,ITXX153,"Gleick, James",Books,true
+01t8V000006duhJQAQ,vol 106 No 3 Journal of Economics,JE10154,,Books,true
+01t8V000006duhKQAQ,Elements of Information Theory,EITX155,"Thomas, Joy",Books,true
+01t8V000006duhLQAQ,Power Electronics - Rashid,PERX156,"Rashid, Muhammad",Books,true
+01t8V000006duhMQAQ,Power Electronics - Mohan,PEMX157,"Mohan, Ned",Books,true
+01t8V000006duhNQAQ,Neural Networks,NNXX158,"Haykin, Simon",Books,true
+01t8V000006duhOQAQ,The Grapes of Wrath,GWTX159,"Steinbeck, John",Books,true
+01t8V000006duhPQAQ,Vyakti ani Valli,VVXX160,"Deshpande, P L",Books,true
+01t8V000006duhQQAQ,Statistical Learning Theory,SLTX161,"Vapnik, Vladimir",Books,true
+01t8V000006duhRQAQ,Empire of the Mughal - The Tainted Throne,EMTT162,"Rutherford, Alex",Books,true
+01t8V000006duhSQAQ,Empire of the Mughal - Brothers at War,EMBW163,"Rutherford, Alex",Books,true
+01t8V000006duhTQAQ,Empire of the Mughal - Ruler of the World,EMRW164,"Rutherford, Alex",Books,true
+01t8V000006duhUQAQ,Empire of the Mughal - The Serpent's Tooth,EMTS165,"Rutherford, Alex",Books,true
+01t8V000006duhVQAQ,Empire of the Mughal - Raiders from the North,EMRN166,"Rutherford, Alex",Books,true
+01t8V000006duhWQAQ,Mossad,MXXX167,"Baz-Zohar, Michael",Books,true
+01t8V000006duhXQAQ,Jim Corbett Omnibus,JCOX168,"Corbett, Jim",Books,true
+01t8V000006duhYQAQ,20000 Leagues Under the Sea,2000169,"Verne, Jules",Books,true
+01t8V000006duhZQAQ,Batatyachi Chal,BCXX170,Deshpande P L,Books,true
+01t8V000006duhaQAA,Hafasavnuk,HXXX171,Deshpande P L,Books,true
+01t8V000006duhbQAA,Urlasurla,UXXX172,Deshpande P L,Books,true
+01t8V000006duhcQAA,Pointers in C,PCXX173,"Kanetkar, Yashwant",Books,true
+01t8V000006duhdQAA,The Cathedral and the Bazaar,CBTX174,"Raymond, Eric",Books,true
+01t8V000006duheQAA,Design with OpAmps,DOAX175,"Franco, Sergio",Books,true
+01t8V000006duhfQAA,Think Complexity,TCXX176,"Downey, Allen",Books,true
+01t8V000006duhgQAA,The Devil's Advocate,DATX177,"West, Morris",Books,true
+01t8V000006duhhQAA,Ayn Rand Answers,ARAX178,"Rand, Ayn",Books,true
+01t8V000006duhiQAA,Philosophy: Who Needs It,PWNI179,"Rand, Ayn",Books,true
+01t8V000006duhjQAA,The World's Great Thinkers,WGTT180,,Books,true
+01t8V000006duhkQAA,Data Analysis with Open Source Tools,DAOS181,"Janert, Phillip",Books,true
+01t8V000006duhlQAA,Broca's Brain,BBXX182,"Sagan, Carl",Books,true
+01t8V000006duhmQAA,Men of Mathematics,MMXX183,"Bell, E T",Books,true
+01t8V000006duhnQAA,Oxford book of Modern Science Writing,OMSW184,"Dawkins, Richard",Books,true
+01t8V000006duhoQAA,Judiciary and Democracy Justice,JJDX185,"Ranjan, Sudhanshu",Books,true
+01t8V000006duhpQAA,The Arthashastra,ATXX186,Kautiyla,Books,true
+01t8V000006duhqQAA,We the People,WPXX187,Palkhivala,Books,true
+01t8V000006duhrQAA,We the Nation,WNXX188,Palkhivala,Books,true
+01t8V000006duhsQAA,The Courtroom Genius,CGTX189,Sorabjee,Books,true
+01t8V000006duhtQAA,Dongri to Dubai,DDXX190,"Zaidi, Hussain",Books,true
+01t8V000006duhuQAA,Foundation History of England,HEFX191,"Ackroyd, Peter",Books,true
+01t8V000006duhvQAA,City of Djinns,CDXX192,"Dalrymple, William",Books,true
+01t8V000006duhwQAA,India's Legal System,ILSX193,Nariman,Books,true
+01t8V000006duhxQAA,More Tears to Cry,MTCX194,"Sassoon, Jean",Books,true
+01t8V000006duhyQAA,The Ropemaker,RTXX195,"Dickinson, Peter",Books,true
+01t8V000006duhzQAA,Angels & Demons,ADXX196,"Brown, Dan",Books,true
+01t8V000006dui0QAA,The Judge,JTXX197,,Books,true
+01t8V000006dui1QAA,The Attorney,ATXX198,,Books,true
+01t8V000006dui2QAA,The Prince,PTXX199,Machiavelli,Books,true
+01t8V000006dui3QAA,Eyeless in Gaza,EGXX200,"Huxley, Aldous",Books,true
+01t8V000006dui4QAA,Tales of Beedle the Bard,TBBX201,"Rowling, J K",Books,true
+01t8V000006dui5QAA,Girl with the Dragon Tattoo,GDTX202,"Larsson, Steig",Books,true
+01t8V000006dui6QAA,Girl who kicked the Hornet's Nest,GHNX203,"Larsson, Steig",Books,true
+01t8V000006dui7QAA,Girl who played with Fire,GFXX204,"Larsson, Steig",Books,true
+01t8V000006dui8QAA,Batman Handbook,BHXX205,,Books,true
+01t8V000006dui9QAA,Murphy's Law,MLXX206,,Books,true
+01t8V000006duiAQAQ,Structure and Randomness,SRXX207,"Tao, Terence",Books,true
+01t8V000006duiBQAQ,Image Processing with MATLAB,IPMA208,"Eddins, Steve",Books,true
+01t8V000006duiCQAQ,Animal Farm,AFXX209,"Orwell, George",Books,true
+01t8V000006duiDQAQ,The Idiot,ITXX210,"Dostoevsky, Fyodor",Books,true
+01t8V000006duiEQAQ,A Christmas Carol,CCAX211,"Dickens, Charles",Books,true
