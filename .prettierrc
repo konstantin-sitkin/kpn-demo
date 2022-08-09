@@ -1,0 +1,18 @@
+{
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "**/lwc/**/*.html",
+      "options": { "parser": "lwc" }
+    },
+    {
+      "files": "*.{cmp,page,component}",
+      "options": { "parser": "html" }
+    }
+  ],
+  "useTabs": false,
+  "tabWidth": 4,
+  "printWidth": 160,
+  "semi": true,
+  "singleQuote": false
+}
