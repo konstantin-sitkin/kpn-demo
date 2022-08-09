@@ -42,8 +42,8 @@ export default class OrderSelectProducts extends LightningElement {
         try {
             await this.getOrderableProducts();
         } catch (e) {
-            parseApexException(e);
-            showErrorToast(this, e);
+            let errorMsg = parseApexException(e);
+            showErrorToast(this, errorMsg);
         }
     }
 
@@ -51,8 +51,8 @@ export default class OrderSelectProducts extends LightningElement {
         try {
             await this.getOrderableProductsCount();
         } catch (e) {
-            parseApexException(e);
-            showErrorToast(this, e);
+            let errorMsg = parseApexException(e);
+            showErrorToast(this, errorMsg);
         }
     }
 

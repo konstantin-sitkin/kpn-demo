@@ -49,8 +49,8 @@ export default class OrderProductCard extends LightningElement {
         try {
             await this.addProduct();
         } catch (e) {
-            parseApexException(e);
-            showErrorToast(this, e);
+            let errorMsg = parseApexException(e);
+            showErrorToast(this, errorMsg);
         } finally {
             this.showSpinner = false;
         }

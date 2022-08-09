@@ -23,6 +23,7 @@ const showErrorToast = (self, message) => {
         title: "Error",
         message: message,
         variant: "error",
+        mode: "sticky"
     });
     self.dispatchEvent(evt);
 };

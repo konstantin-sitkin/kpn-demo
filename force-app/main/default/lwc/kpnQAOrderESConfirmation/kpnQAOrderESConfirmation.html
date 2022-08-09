@@ -1,0 +1,10 @@
+<template>
+    <template if:true={isOrderProcessing}>
+        <div class="slds-text-align_center">
+            <span class="slds-text-heading_medium">Submitting Order in progress...</span>
+            <span class="my-spinner-container">
+                <lightning-spinner alternative-text="Loading" size="small" class="my-spinner"></lightning-spinner>
+            </span>
+        </div>
+    </template>
+</template>

@@ -56,8 +56,8 @@ export default class OrderViewOrderItems extends LightningElement {
         try {
             await this.getOrderItems();
         } catch (e) {
-            parseApexException(e);
-            showErrorToast(this, e);
+            let errorMsg = parseApexException(e);
+            showErrorToast(this, errorMsg);
         }
     }
 
