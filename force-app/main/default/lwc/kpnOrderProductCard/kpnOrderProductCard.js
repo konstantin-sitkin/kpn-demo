@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from "lwc";
-import { parseApexException } from "c/kpnUtils";
+import { parseApexException, showErrorToast, showSuccessToast, showValidationToast } from "c/kpnUtils";
 
 import { publish, MessageContext } from "lightning/messageService";
 import CHANNEL_ORDER_ITEM_CHANGE from "@salesforce/messageChannel/OrderItemChange__c";
@@ -50,6 +50,7 @@ export default class OrderProductCard extends LightningElement {
             await this.addProduct();
         } catch (e) {
             parseApexException(e);
+            showErrorToast(this, e);
         } finally {
             this.showSpinner = false;
         }
@@ -61,9 +62,24 @@ export default class OrderProductCard extends LightningElement {
             orderId: this._orderId,
         });
         console.log("upserted OrderItem", response);
-
+        let message = this.buildProductAddedSuccessMessage(response);
+        showSuccessToast(this, message);
         const payload = { data: response };
         // LMS should be enough for components on a single page
         publish(this.messageContext, CHANNEL_ORDER_ITEM_CHANGE, payload);
+    }
+
+    buildProductAddedSuccessMessage(orderItem) {
+        let message;
+        let productName = orderItem.Product2.Name || 'Product';
+        let quantity = orderItem.Quantity;
+        // it's a new order item
+        if (quantity === 1) {
+            message = `${productName} was Added to Order`;
+        } else {
+            // it's an existing order item
+            message = `${productName} was Updated with Quantity ${quantity}`;
+        }
+        return message;
     }
 }

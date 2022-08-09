@@ -5,5 +5,5 @@
  * @created by   : 2022-08-09
  **/
 public class KPN_AppConstants {
-    public static Integer PRODUCTS_PAGE_SIZE = 5;
+    public static Integer PRODUCTS_PAGE_SIZE = 20;
 }

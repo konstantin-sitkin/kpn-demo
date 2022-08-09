@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from "lwc";
-import { parseApexException } from "c/kpnUtils";
+import { parseApexException, showErrorToast, showSuccessToast, showValidationToast } from "c/kpnUtils";
 
 import apexGetOrderableProducts from "@salesforce/apex/KPN_OrderSelectProductsCtrl.getOrderableProducts";
 import apexGetOrderableProductsCount from "@salesforce/apex/KPN_OrderSelectProductsCtrl.getOrderableProductsCount";
@@ -38,6 +38,7 @@ export default class OrderSelectProducts extends LightningElement {
             await this.getOrderableProducts();
         } catch (e) {
             parseApexException(e);
+            showErrorToast(this, e);
         }
     }
 
@@ -46,6 +47,7 @@ export default class OrderSelectProducts extends LightningElement {
             await this.getOrderableProductsCount();
         } catch (e) {
             parseApexException(e);
+            showErrorToast(this, e);
         }
     }
 
@@ -92,6 +94,7 @@ export default class OrderSelectProducts extends LightningElement {
     disconnectedCallback() {}
 
     errorCallback(error, stack) {
-        this.error = error;
+        console.error(error, stack);
+        showErrorToast(this, error);
     }
 }

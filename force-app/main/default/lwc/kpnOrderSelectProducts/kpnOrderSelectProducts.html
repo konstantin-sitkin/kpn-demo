@@ -1,6 +1,6 @@
 <template>
     <template if:true={availableProducts.length}>
-        <div class="slds-size_1-of-1">
+        <div class="slds-size_1-of-1 product-cards">
         <template for:each={availableProducts} for:item="availableProduct" for:index="availableProductIndex">
             <div key={availableProduct.pbeId}>
                 <c-kpn-order-product-card order-id={recordId} available-product={availableProduct}></c-kpn-order-product-card>

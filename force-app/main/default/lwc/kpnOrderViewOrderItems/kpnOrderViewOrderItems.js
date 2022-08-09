@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from "lwc";
-import { parseApexException } from "c/kpnUtils";
+import { parseApexException, showErrorToast, showSuccessToast, showValidationToast } from "c/kpnUtils";
 
 import { subscribe, MessageContext } from "lightning/messageService";
 import CHANNEL_ORDER_ITEM_CHANGE from "@salesforce/messageChannel/OrderItemChange__c";
@@ -57,6 +57,7 @@ export default class OrderViewOrderItems extends LightningElement {
             await this.getOrderItems();
         } catch (e) {
             parseApexException(e);
+            showErrorToast(this, e);
         }
     }
 
@@ -140,5 +141,8 @@ export default class OrderViewOrderItems extends LightningElement {
         });
     }
 
-    errorCallback() {}
+    errorCallback(error, stack) {
+        console.error(error, stack);
+        showErrorToast(this, error);
+    }
 }
