@@ -7,6 +7,7 @@ public with sharing class KPN_OrderSelectProductsCtrl {
             SELECT Count() 
             FROM PricebookEntry
             WHERE Pricebook2Id = :currentOrder.PriceBook2Id
+            WITH SECURITY_ENFORCED
         ];
         return pbesTotal;
     }
@@ -17,9 +18,11 @@ public with sharing class KPN_OrderSelectProductsCtrl {
         System.debug(offset);
         Order currentOrder = OrderSelector.getById(orderId);
         List<PricebookEntry> pbes = [
-            SELECT Id, Name, UnitPrice, Product2Id
+            SELECT Id, Name, UnitPrice, Product2Id, IsActive
             FROM PricebookEntry
             WHERE Pricebook2Id = :currentOrder.PriceBook2Id
+            AND IsActive = TRUE
+            WITH SECURITY_ENFORCED
             ORDER BY Name
             LIMIT :KPN_AppConstants.PRODUCTS_PAGE_SIZE
             OFFSET :offset

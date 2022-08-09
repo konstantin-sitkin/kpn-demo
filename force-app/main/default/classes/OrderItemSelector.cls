@@ -6,6 +6,7 @@ public with sharing class OrderItemSelector {
             OrderId, UnitPrice, TotalPrice
             FROM OrderItem
             WHERE Id = :orderItemId
+            WITH SECURITY_ENFORCED
         ];
         return orderItems.get(0);
     }
@@ -17,6 +18,7 @@ public with sharing class OrderItemSelector {
             OrderId, UnitPrice, TotalPrice
             FROM OrderItem
             WHERE OrderId = :orderId
+            WITH SECURITY_ENFORCED
             ORDER BY LastModifiedDate DESC
         ];
         return orderItems;

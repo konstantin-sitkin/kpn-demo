@@ -5,6 +5,7 @@ public with sharing class OrderSelector {
             PriceBook2Id
             FROM Order
             WHERE Id = :orderId
+            WITH SECURITY_ENFORCED
             LIMIT 1
         ];
         return record;

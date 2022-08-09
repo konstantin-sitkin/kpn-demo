@@ -6,6 +6,7 @@ public with sharing class KPN_OrderProductCtrl {
             SELECT Id, Name, UnitPrice, Product2Id
             FROM PricebookEntry
             WHERE Id = :pbeId
+            WITH SECURITY_ENFORCED
             LIMIT 1
         ];
         List<OrderItem> orderItems = [
@@ -13,6 +14,7 @@ public with sharing class KPN_OrderProductCtrl {
             FROM OrderItem
             WHERE OrderId = :orderId
             AND PricebookEntryId = :pbeId
+            WITH SECURITY_ENFORCED
         ];
         OrderItem orderItemToUpsert;
         if (orderItems.isEmpty()) {
