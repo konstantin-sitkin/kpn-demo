@@ -42,7 +42,7 @@ export default class OrderViewOrderItems extends LightningElement {
     }
 
     async handleOrderItemChangeMessage(message) {
-        console.log("LMS Order", message);
+        // console.log("LMS Order", message);
         // save received record for future use / delayed processing
         this.recordsReceived.push({
             ...message.data,
@@ -65,7 +65,7 @@ export default class OrderViewOrderItems extends LightningElement {
         let response = await apexGetOrderItems({
             orderId: this.recordId,
         });
-        console.log("received order items", response);
+        // console.log("received order items", response);
         this.buildTableData(response);
     }
 
@@ -117,6 +117,7 @@ export default class OrderViewOrderItems extends LightningElement {
             tableItems.push(tableItem);
         });
         // reassigns variable reference to rerender table
+        // console.log('assigned table items', tableItems.length);
         this.tableItems = tableItems;
     }
 

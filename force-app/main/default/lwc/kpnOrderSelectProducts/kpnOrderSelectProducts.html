@@ -7,7 +7,7 @@
     <template if:true={areProductsRendered}>
         <div class="slds-size_1-of-1 product-cards">
             <template for:each={availableProducts} for:item="availableProduct" for:index="availableProductIndex">
-                <div key={availableProduct.pbeId}>
+                <div key={availableProduct.pbeId} data-name={availableProduct.name}>
                     <c-kpn-order-product-card order-id={recordId} available-product={availableProduct}></c-kpn-order-product-card>
                 </div>
             </template>
@@ -19,6 +19,7 @@
                     <template if:true={previousDisabled}>
                         <lightning-button
                             variant="neutral"
+                            name="previous"
                             title="previous"
                             label="Previous"
                             class="slds-float_left"
@@ -31,6 +32,7 @@
                     <template if:false={previousDisabled}>
                         <lightning-button
                             variant="neutral"
+                            name="previous"
                             title="previous"
                             label="Previous"
                             class="slds-float_left"
@@ -45,6 +47,7 @@
                     <template if:true={nextDisabled}>
                         <lightning-button
                             variant="neutral"
+                            name="next"
                             title="next"
                             label="Next"
                             class="slds-float_right"
@@ -56,6 +59,7 @@
                     <template if:false={nextDisabled}>
                         <lightning-button
                             variant="neutral"
+                            name="next"
                             title="next"
                             label="Next"
                             class="slds-float_right"

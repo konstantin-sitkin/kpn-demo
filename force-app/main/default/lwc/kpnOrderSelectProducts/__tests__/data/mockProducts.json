@@ -1,0 +1,19 @@
+{
+    "availableProducts": [
+        {
+            "listPrice": 44.07,
+            "name": "20000 Leagues Under the Sea",
+            "pbeId": "01u8V00000PcIBbQAN",
+            "productId": "01t8V000006duhYQAQ"
+        },
+        {
+            "listPrice": 75.85,
+            "name": "A Christmas Carol",
+            "pbeId": "01u8V00000PcICHQA3",
+            "productId": "01t8V000006duiEQAQ"
+        }
+    ],
+    "availableProductsCount": 2,
+    "offset": 0,
+    "pageSize": 1
+}

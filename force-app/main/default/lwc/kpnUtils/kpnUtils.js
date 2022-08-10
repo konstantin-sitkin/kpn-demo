@@ -39,7 +39,7 @@ const parseApexException = (apexException) => {
     if (!returnErr) {
         returnErr = "Couldn't parse error response, see browser Inspector for details";
     }
-    console.error(returnErr);
+    // console.error(returnErr);
     return returnErr;
 };
 

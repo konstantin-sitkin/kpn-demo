@@ -21,10 +21,10 @@ export default class OrderSelectProducts extends LightningElement {
     @wire(getRecord, { recordId: "$recordId", fields: [FIELD_STATUS] })
     wiredRecord({ error, data }) {
         if (data) {
-            console.log("kpnOrderSelectProducts received an update");
+            // console.log("kpnOrderSelectProducts received an update");
             this.initState();
         } else if (error) {
-            console.log("error data", error);
+            console.error("error data", error);
         }
     }
 
@@ -55,15 +55,12 @@ export default class OrderSelectProducts extends LightningElement {
         return this.availableProducts.length > 0;
     }
 
-    connectedCallback() {
-    }
-
     initState() {
         this.showSpinner = true;
         this.currentOffset = 0;
         this.productsTotal = 0;
         this.pageSize = 0;
-        console.log(this.recordId);
+        // console.log(this.recordId);
         this.getOrderableProductsSafe();
         this.getOrderableProductsCountSafe();
     }
@@ -92,7 +89,7 @@ export default class OrderSelectProducts extends LightningElement {
         let response = await apexGetOrderableProductsCount({
             orderId: this.recordId,
         });
-        console.log("available products total", response);
+        // console.log("available products total", response);
         this.productsTotal = response;
     }
 
@@ -101,7 +98,7 @@ export default class OrderSelectProducts extends LightningElement {
             orderId: this.recordId,
             offset: this.currentOffset,
         });
-        console.log(response);
+        // console.log(response);
         this.availableProducts = response.availableProducts;
         this.pageSize = response.pageSize;
     }
@@ -128,10 +125,4 @@ export default class OrderSelectProducts extends LightningElement {
         this.getOrderableProducts();
     }
 
-    disconnectedCallback() {}
-
-    errorCallback(error, stack) {
-        console.error(error, stack);
-        showErrorToast(this, error);
-    }
 }

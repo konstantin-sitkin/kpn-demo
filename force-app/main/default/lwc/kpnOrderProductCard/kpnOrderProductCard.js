@@ -61,7 +61,7 @@ export default class OrderProductCard extends LightningElement {
             pbeId: this._availableProduct.pbeId,
             orderId: this._orderId,
         });
-        console.log("upserted OrderItem", response);
+        // console.log("upserted OrderItem", response);
         let message = this.buildProductAddedSuccessMessage(response);
         showSuccessToast(this, message);
         const payload = { data: response };
