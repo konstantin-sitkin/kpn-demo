@@ -13,6 +13,7 @@ export default class OrderSelectProducts extends LightningElement {
     pageSize; // products page size
     availableProducts = []; // wrapper of price book entries
     productsTotal; // total records validator for pagination
+    showSpinner;
     // api
     @api
     recordId; // param from record page
@@ -46,10 +47,19 @@ export default class OrderSelectProducts extends LightningElement {
         return this.productsTotal > this.pageSize;
     }
 
+    @api
+    get areProductsRendered() {
+        if (this.showSpinner) {
+            return false;
+        }
+        return this.availableProducts.length > 0;
+    }
+
     connectedCallback() {
     }
 
     initState() {
+        this.showSpinner = true;
         this.currentOffset = 0;
         this.productsTotal = 0;
         this.pageSize = 0;
@@ -64,6 +74,8 @@ export default class OrderSelectProducts extends LightningElement {
         } catch (e) {
             let errorMsg = parseApexException(e);
             showErrorToast(this, errorMsg);
+        } finally {
+            this.showSpinner = false;
         }
     }
 

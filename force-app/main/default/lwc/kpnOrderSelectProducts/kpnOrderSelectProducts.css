@@ -6,3 +6,11 @@
     max-height: 45vh;
     overflow-y: scroll;
 }
+
+.my-spinner-container {
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    min-height: 15vh;
+    width: 100%;
+}
