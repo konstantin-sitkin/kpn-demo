@@ -1,3 +1,8 @@
+/**
+ * @description  : External System Post Order Request payload
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-10
+**/
 public class KPN_ExternalSystemPostOrderRequest {
     public String accountNumber;
     public String orderNumber;
@@ -38,9 +43,5 @@ public class KPN_ExternalSystemPostOrderRequest {
             this.unitPrice = orderItem.UnitPrice.setScale(2);
             this.quantity = Integer.valueOf(orderItem.Quantity);
         }
-    }
-
-    public static KPN_ExternalSystemPostOrderRequest parse(String json) {
-        return (KPN_ExternalSystemPostOrderRequest) System.JSON.deserialize(json, KPN_ExternalSystemPostOrderRequest.class);
     }
 }

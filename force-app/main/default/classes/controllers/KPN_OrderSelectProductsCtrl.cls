@@ -14,7 +14,7 @@ public with sharing class KPN_OrderSelectProductsCtrl {
     public static Integer getOrderableProductsCount(String orderId) {
         Order currentOrder = KPN_OrderSelector.getByIdWithChildren(orderId);
         Integer pbesTotal;
-        
+        // for activated orders new PBEs should be excluded from list
         if (currentOrder.Status == KPN_AppConstants.ORDER_STATUS_ACTIVATED) {
             List<Id> existingPbeIds = new List<Id>();
             for (OrderItem oItem : currentOrder.OrderItems) {
@@ -50,7 +50,7 @@ public with sharing class KPN_OrderSelectProductsCtrl {
     public static AvailableProductsResponse getOrderableProducts(String orderId, Integer offset) {
         Order currentOrder = KPN_OrderSelector.getByIdWithChildren(orderId);
         List<PricebookEntry> pbes;
-        
+        // for activated orders new PBEs should be excluded from list
         if (currentOrder.Status == KPN_AppConstants.ORDER_STATUS_ACTIVATED) {
             List<Id> existingPbeIds = new List<Id>();
             for (OrderItem oItem : currentOrder.OrderItems) {

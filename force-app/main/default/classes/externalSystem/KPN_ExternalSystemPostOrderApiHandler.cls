@@ -1,3 +1,8 @@
+/**
+ * @description  : External System Handler for order posts
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-10
+**/
 public class KPN_ExternalSystemPostOrderApiHandler implements KPN_ExternalSystemApiHandler {
     public KPN_ExternalSystemPostOrderApiHandler() {
         this.mOrder = new Order();
@@ -38,4 +43,8 @@ public class KPN_ExternalSystemPostOrderApiHandler implements KPN_ExternalSystem
         return apiRes;
     }
 
+
+    public class KPN_ExternalSystemPostOrderException extends Exception {
+
+    }
 }

@@ -1,3 +1,8 @@
+/**
+ * @description  : External System Requests Router
+ * @author       : Konstantin Sitkin
+ * @created by   : 2022-08-10
+**/
 public class KPN_ExternalSystemApi {
     public static final Integer API_TIMEOUT = 10000;
     public static final Integer SUCCESS_CODE = 200;

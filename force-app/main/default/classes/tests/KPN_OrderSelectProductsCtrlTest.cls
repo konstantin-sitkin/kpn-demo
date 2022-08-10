@@ -15,7 +15,7 @@ private class KPN_OrderSelectProductsCtrlTest {
     }
 
     @isTest
-    static void testGetOrderableProductsCount() {
+    static void testGetOrderableProductsCountDraft() {
         Id orderId = [SELECT Id FROM Order LIMIT 1].Id;
         List<PricebookEntry> pbes = [
             SELECT Id, IsActive
@@ -45,6 +45,43 @@ private class KPN_OrderSelectProductsCtrlTest {
         System.assertEquals(expectedPbesCount, actualPbesCount, 'method should return correct PBEs count');
     } 
 
+    @isTest
+    static void testGetOrderableProductsCountActivated() {
+        Integer expectedItemsCount = 12;
+        Id orderId = [SELECT Id FROM Order LIMIT 1].Id;
+        KPN_TestDataFactory.createOrderItems(orderId, expectedItemsCount);
+
+        Order currentOrder = new Order(
+            Id = orderId,
+            Status = KPN_AppConstants.ORDER_STATUS_ACTIVATED
+        );
+        update currentOrder;
+
+        Test.startTest();
+        Integer actualItemsCount = KPN_OrderSelectProductsCtrl.getOrderableProductsCount(orderId);
+        Test.stopTest();
+
+        System.assertEquals(expectedItemsCount, actualItemsCount, 'method should return only existing products');
+    } 
+
+    @isTest
+    static void testGetOrderableProductsActivated() {
+        Integer expectedItemsCount = KPN_AppConstants.PRODUCTS_PAGE_SIZE - 1;
+        Id orderId = [SELECT Id FROM Order LIMIT 1].Id;
+        KPN_TestDataFactory.createOrderItems(orderId, expectedItemsCount);
+
+        Order currentOrder = new Order(
+            Id = orderId,
+            Status = KPN_AppConstants.ORDER_STATUS_ACTIVATED
+        );
+        update currentOrder;
+
+        Test.startTest();
+        KPN_OrderSelectProductsCtrl.AvailableProductsResponse res = KPN_OrderSelectProductsCtrl.getOrderableProducts(orderId, 0);
+        Test.stopTest();
+
+        System.assertEquals(expectedItemsCount, res.availableProductsCount, 'method should return only existing products');
+    } 
 
     @isTest
     static void testGetOrderableProductsOffset0() {
